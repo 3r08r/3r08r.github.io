@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello, World!</title>
+    <title>My Social Linktree</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .link:hover {
+            transform: scale(1.05);
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="link">
+        <a href="https://www.facebook.com">Facebook</a>
+    </div>
+    <div class="link">
+        <a href="https://www.instagram.com">Instagram</a>
+    </div>
+    <div class="link">
+        <a href="https://www.twitter.com">Twitter</a>
+    </div>
+    <!-- Add more social links here -->
 </body>
 </html>
