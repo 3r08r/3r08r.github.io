@@ -4,119 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool Linktree</title>
-    <style>
-        @keyframes move {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(#16181d, #000000, #1c1f26);
-            overflow: hidden;
-        }
-
-        .container {
-            position: relative;
-            text-align: center;
-            width: 300px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-        }
-
-        p {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 20px;
-        }
-
-        .link {
-            display: block;
-            padding: 10px;
-            margin: 10px 0;
-            text-decoration: none;
-            color: #fff;
-            background-color: #007BFF;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .link:hover {
-            background-color: #0056b3;
-        }
-
-        .shape {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: move 4s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        .shape:nth-child(1) {
-            left: 20%;
-            top: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            left: 70%;
-            top: 30%;
-            animation-delay: 1s;
-        }
-
-        .shape:nth-child(3) {
-            left: 40%;
-            top: 70%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(4) {
-            left: 80%;
-            top: 80%;
-            animation-delay: 3s;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
+    <canvas id="canvas"></canvas>
     <div class="container">
-        <img src="https://cdn.discordapp.com/avatars/962060530506399784/8af2561dc3920eb3ecc72c194d905584?size=1024" alt="Profile Picture" class="profile-pic">
-        <h1>Er0r/Jan</h1>
-        <p>he/him</p>
-	<p>Hobbys: Judo, Geige. Dinge kaputt machen</p>
-        <a href="https://discord.com/users/962060530506399784" class="link">Discord</a>
-        <a href="https://www.reddit.com/user/MrFischii/" class="link">Reddit</a>
-        <a href="https://fabzact.de/twitch" class="link">Commuity Admin for Fabzact</a>
-        <a href="https://steamcommunity.com/profiles/76561199233541058" class="link">Steam</a>
+        <div class="box">
+            <div class="content">
+                <img src="https://cdn.discordapp.com/avatars/962060530506399784/8af2561dc3920eb3ecc72c194d905584?size=1024" alt="Profile Picture" class="profile-pic">
+                <h1>Er0r/Jan</h1>
+                <p>he/him</p>
+                <p>Hobbys: Judo, Geige. Dinge kaputt machen</p>
+                <a href="https://discord.com/users/962060530506399784" class="link">Discord</a>
+                <a href="https://www.reddit.com/user/MrFischii/" class="link">Reddit</a>
+                <a href="https://fabzact.de/twitch" class="link">Commuity Admin for Fabzact</a>
+                <a href="https://steamcommunity.com/profiles/76561199233541058" class="link">Steam</a>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const box = document.querySelector('.box');
+            box.addEventListener('animationend', () => {
+                box.classList.add('expanded');
+            });
+        });
+    </script>
 </body>
 </html>
